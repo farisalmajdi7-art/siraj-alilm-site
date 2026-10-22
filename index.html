@@ -1,349 +1,715 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="سراج العلم — نحول أفكارك إلى فيديوهات تعليمية وإعلانية مميزة بالذكاء الاصطناعي.">
-<title>سراج العلم | فيديوهات تصنع الفرق</title>
-<style>
-:root {
-  --ink: #08121b;
-  --ink2: #101d29;
-  --gold: #e8b86f;
-  --gold2: #f6d7a1;
-  --paper: #f7f4ee;
-  --muted: #b9c1c8;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  font-family: Tahoma, Arial, sans-serif;
-  background: var(--paper);
-  color: #17212b;
-  line-height: 1.8;
-}
-a { color: inherit; text-decoration: none; }
-.wrap { width: min(1120px, 92%); margin: auto; }
-.top {
-  background: #08121bf5;
-  color: white;
-  border-bottom: 1px solid #e8b86f47;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-.nav {
-  min-height: 76px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 22px;
-  font-weight: 800;
-  color: var(--gold2);
-}
-.mark {
-  width: 42px;
-  height: 42px;
-  border: 1px solid var(--gold);
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  color: var(--gold);
-  font-size: 24px;
-}
-.links {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  font-size: 14px;
-}
-.links a:hover { color: var(--gold); }
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  background: var(--gold);
-  color: #17202a;
-  padding: 12px 22px;
-  border-radius: 999px;
-  font-weight: 800;
-  border: 0;
-  cursor: pointer;
-  transition: .2s;
-}
-.btn:hover { background: var(--gold2); transform: translateY(-2px); }
-.outline {
-  background: transparent;
-  color: var(--gold2);
-  border: 1px solid var(--gold);
-}
-.hero {
-  background: radial-gradient(ellipse at 15% 30%, #243746, transparent 42%),
-              linear-gradient(120deg, #070e15, #101d29 60%, #08121b);
-  color: white;
-}
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  align-items: center;
-  padding: 80px 0;
-}
-.eyebrow { color: var(--gold); font-size: 14px; font-weight: bold; }
-h1 { font-size: clamp(36px, 5vw, 60px); line-height: 1.3; }
-h1 span { color: var(--gold); }
-.hero p { color: #d2d9df; font-size: 18px; }
-.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
-.visual {
-  min-height: 320px;
-  border: 1px solid #e8b86f47;
-  border-radius: 28px;
-  padding: 24px;
-  background: linear-gradient(145deg, #ffffff15, #ffffff03);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.screen {
-  width: 90%;
-  min-height: 250px;
-  border: 7px solid #263440;
-  border-radius: 15px;
-  background: linear-gradient(140deg, #152c3c, #526b75 50%, #d6a76a);
-  color: white;
-  padding: 25px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.section { padding: 65px 0; }
-.dark { background: var(--ink); color: white; }
-.heading { text-align: center; margin-bottom: 34px; }
-.heading h2 { font-size: 32px; margin: 5px 0; }
-.heading p { color: #69737c; }
-.dark .heading p { color: var(--muted); }
-.cards, .portfolio {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-.service {
-  padding: 24px;
-  border: 1px solid #e4d9c8;
-  background: #fffdf9;
-  border-radius: 16px;
-}
-.service h3 { margin-bottom: 5px; }
-.service p { color: #65717b; margin: 0; }
-.emoji { font-size: 32px; }
-.work {
-  border-radius: 16px;
-  overflow: hidden;
-  background: #101d29;
-  color: white;
-  border: 1px solid #e8b86f47;
-}
-.art {
-  min-height: 170px;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  padding: 20px;
-  font-size: 23px;
-  font-weight: bold;
-  background: linear-gradient(145deg, #182c38, #7a5738);
-}
-.art.two { background: linear-gradient(145deg, #163d46, #b27b47); }
-.art.three { background: linear-gradient(145deg, #20283e, #73523b); }
-.work-info { padding: 16px; }
-.work-info p { color: #c4cbd1; font-size: 14px; }
-.steps {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-.step { text-align: center; padding: 18px 10px; }
-.num {
-  margin: auto;
-  width: 48px;
-  height: 48px;
-  display: grid;
-  place-items: center;
-  border: 1px solid var(--gold);
-  border-radius: 50%;
-  color: var(--gold);
-  font-size: 20px;
-}
-.cta {
-  padding: 55px 0;
-  text-align: center;
-  color: white;
-  background: linear-gradient(120deg, #172b38, #09131d);
-  border-top: 1px solid #e8b86f47;
-}
-.cta h2 { font-size: 30px; }
-.cta p { color: #d0d7dd; }
-.footer {
-  background: #050b10;
-  color: #aab3bb;
-  padding: 22px 0;
-  text-align: center;
-  font-size: 13px;
-}
-.footer strong { color: var(--gold2); }
-.note { font-size: 12px; color: #aab3bb; }
-@media(max-width:760px) {
-  .links { display: none; }
-  .nav { min-height: 66px; }
-  .hero-grid { grid-template-columns: 1fr; padding: 50px 0; gap: 25px; }
-  .cards, .portfolio { grid-template-columns: 1fr 1fr; }
-  .steps { grid-template-columns: 1fr 1fr; }
-  .section { padding: 45px 0; }
-}
-@media(max-width:460px) {
-  .cards, .portfolio { grid-template-columns: 1fr; }
-  .actions .btn { width: 100%; }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="سراج العلم - نحول أفكارك إلى فيديوهات تعليمية وإعلانية إبداعية باستخدام الذكاء الاصطناعي.">
+  <title>سراج العلم | فيديوهات بالذكاء الاصطناعي</title>
+
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg2: #0b192b;
+      --card: #102238;
+      --gold: #d8b36a;
+      --gold-light: #f1d69a;
+      --white: #f7f7f4;
+      --muted: #b5c0ce;
+      --border: rgba(216,179,106,.22);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: Tahoma, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--white);
+      line-height: 1.9;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .container {
+      width: min(1120px, 91%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(7,17,31,.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--gold-light);
+      white-space: nowrap;
+    }
+
+    .logo span {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 22px;
+      border-radius: 9px;
+      font-weight: bold;
+      font-size: 14px;
+      transition: .2s;
+      border: 1px solid transparent;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      color: #101827;
+    }
+
+    .btn-outline {
+      border-color: var(--border);
+      color: var(--gold-light);
+      background: transparent;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 105px 0 95px;
+      background:
+        radial-gradient(ellipse at 80% 15%, rgba(216,179,106,.13), transparent 40%),
+        radial-gradient(ellipse at 10% 90%, rgba(35,86,132,.18), transparent 40%);
+    }
+
+    .hero-content {
+      max-width: 790px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      border: 1px solid var(--border);
+      color: var(--gold-light);
+      padding: 6px 15px;
+      border-radius: 30px;
+      font-size: 12px;
+      margin-bottom: 23px;
+      background: rgba(216,179,106,.06);
+    }
+
+    h1 {
+      font-size: clamp(35px, 6vw, 62px);
+      line-height: 1.4;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+
+    h1 span, .gold {
+      color: var(--gold-light);
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 0 auto 30px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .hero-note {
+      margin-top: 32px;
+      font-size: 12px;
+      color: #8796a9;
+    }
+
+    section {
+      padding: 78px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 42px;
+    }
+
+    .section-heading .eyebrow {
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: clamp(27px, 4vw, 39px);
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .services-grid, .steps-grid, .works-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: linear-gradient(145deg, #102238, #0b192b);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 27px;
+      transition: .25s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(216,179,106,.55);
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: rgba(216,179,106,.12);
+      color: var(--gold-light);
+      font-size: 23px;
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      font-size: 19px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .works-section {
+      background: var(--bg2);
+    }
+
+    .work-card {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .work-visual {
+      min-height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 10px;
+      background:
+        radial-gradient(circle at 50% 35%, rgba(216,179,106,.2), transparent 48%),
+        linear-gradient(135deg, #132b43, #081321);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .play-icon {
+      width: 58px;
+      height: 58px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--gold-light);
+      font-size: 23px;
+      padding-right: 3px;
+    }
+
+    .work-label {
+      color: var(--gold-light);
+      font-size: 12px;
+    }
+
+    .work-info {
+      padding: 22px;
+    }
+
+    .work-info h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .work-info p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    .work-info .btn {
+      width: 100%;
+    }
+
+    .steps-grid {
+      counter-reset: step;
+    }
+
+    .step-number {
+      font-size: 30px;
+      color: var(--gold);
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .idea-box {
+      background:
+        radial-gradient(ellipse at 10% 20%, rgba(216,179,106,.12), transparent 45%),
+        var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 45px 25px;
+      text-align: center;
+    }
+
+    .idea-box p {
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0 auto 25px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .contact-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 28px;
+    }
+
+    .contact-card h3 {
+      color: var(--gold-light);
+      margin-bottom: 10px;
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-logo {
+      color: var(--gold-light);
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      left: 18px;
+      z-index: 90;
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      background: #25d366;
+      color: #fff;
+      border-radius: 50%;
+      font-size: 26px;
+      box-shadow: 0 5px 24px rgba(0,0,0,.3);
+    }
+
+    @media (max-width: 800px) {
+      .nav-links {
+        display: none;
+      }
+
+      .services-grid, .steps-grid, .works-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero {
+        padding: 75px 0;
+      }
+    }
+
+    @media (max-width: 540px) {
+      nav {
+        min-height: 68px;
+      }
+
+      .logo {
+        font-size: 21px;
+      }
+
+      nav > .btn {
+        padding: 10px 12px;
+        font-size: 12px;
+      }
+
+      section {
+        padding: 58px 0;
+      }
+
+      .services-grid, .steps-grid, .works-grid, .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .card {
+        padding: 23px;
+      }
+
+      .idea-box {
+        padding: 32px 20px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<header class="top">
-  <div class="wrap nav">
-    <a class="brand" href="#home">
-      <span class="mark">س</span>
-      <span>سراج العلم
-        <small style="display:block;font-size:10px;font-weight:400;color:#d0d5da">نضيء الفكرة بالصورة</small>
-      </span>
-    </a>
-    <nav class="links">
-      <a href="#home">الرئيسية</a>
-      <a href="#services">خدماتنا</a>
-      <a href="#works">أعمالنا</a>
-      <a href="#steps">كيف نعمل؟</a>
-      <a href="#idea">شاركنا فكرتك</a>
-      <a href="#contact">تواصل معنا</a>
+<header>
+  <div class="container">
+    <nav>
+      <a class="logo" href="#home">
+        سراج العلم
+        <span>SIRAJ ALILM</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#home">الرئيسية</a>
+        <a href="#services">خدماتنا</a>
+        <a href="#works">أعمالنا</a>
+        <a href="#steps">آلية العمل</a>
+        <a href="#contact">تواصل معنا</a>
+      </div>
+
+      <a class="btn btn-gold" href="#idea">ابدأ فكرتك</a>
     </nav>
-    <a class="btn outline" href="#contact">اطلب فيديوك</a>
   </div>
 </header>
 
 <main>
-<section class="hero" id="home">
-  <div class="wrap hero-grid">
-    <div>
-      <div class="eyebrow">إنتاج إبداعي بالذكاء الاصطناعي</div>
-      <h1>نحوّل أفكارك إلى<br><span>فيديوهات مدهشة</span></h1>
-      <p>من الدروس التعليمية إلى الإعلانات التجارية والقصص البصرية؛ نصنع محتوى يلفت الانتباه ويقرّب فكرتك من جمهورك.</p>
-      <div class="actions">
-        <a class="btn" href="#contact">اطلب فيديوك الآن ←</a>
-        <a class="btn outline" href="#works">شاهد نماذج أعمالنا</a>
-        <a class="btn outline" href="https://docs.google.com/forms/d/e/1FAIpQLSdZX5ZoxnRgSrzyASyKpkhamCFIpXMky04dV0Y9fVjTTmTPkA/viewform?usp=header" target="_blank" rel="noopener">ناقش فكرتك معنا 💡</a>
-      </div>
-      <p>✦ أفكار إبداعية　✦ جودة بصرية　✦ خطوات واضحة</p>
-    </div>
-    <div class="visual">
-      <div class="screen">
-        <div>
-          <div class="eyebrow">SIRAJ ALILM STUDIO</div>
-          <h2>فكرتك تستحق أن تُرى</h2>
-          <p>نصنع من الخيال تجربة بصرية</p>
+
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <span class="eyebrow">الإبداع يلتقي بالذكاء الاصطناعي</span>
+
+        <h1>
+          أفكارك تستحق أن تُرى<br>
+          <span>بأسلوب مختلف</span>
+        </h1>
+
+        <p>
+          نحول أفكارك إلى فيديوهات تعليمية وإعلانية مبتكرة باستخدام الذكاء الاصطناعي،
+          لنقدم محتوى بصريًا جذابًا يساعدك على إيصال رسالتك بأسلوب مميز.
+        </p>
+
+        <div class="hero-buttons">
+          <a class="btn btn-gold" href="#idea">✦ اطلب فيديوك الآن</a>
+          <a class="btn btn-outline" href="#works">شاهد أعمالنا</a>
         </div>
-        <div>━━━━━━━ ✦ ━━━━━━━</div>
+
+        <div class="hero-note">
+          فيديوهات تعليمية • إعلانات إبداعية • محتوى بصري بالذكاء الاصطناعي
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section" id="services">
-  <div class="wrap">
-    <div class="heading">
-      <span class="eyebrow">ماذا نصنع؟</span>
-      <h2>خدماتنا</h2>
-      <p>حلول فيديو إبداعية تناسب أهدافك وجمهورك</p>
-    </div>
-    <div class="cards">
-      <article class="service"><div class="emoji">🎓</div><h3>فيديوهات تعليمية</h3><p>تحويل الدروس والمفاهيم إلى مشاهد مبسطة وجذابة تساعد على الفهم والتذكر.</p></article>
-      <article class="service"><div class="emoji">📣</div><h3>فيديوهات إعلانية</h3><p>إعلانات مبتكرة للمشاريع والمتاجر والمقاهي، بأسلوب بصري يبرز هوية العلامة.</p></article>
-      <article class="service"><div class="emoji">🎬</div><h3>قصص ومشاهد سينمائية</h3><p>مشاهد قصصية وتاريخية وخيالية تُقدَّم بأسلوب بصري غني بالتفاصيل.</p></article>
-      <article class="service"><div class="emoji">💡</div><h3>أفكار مخصصة</h3><p>لديك فكرة مختلفة؟ نساعدك في تطويرها وتحويلها إلى تصور فيديو واضح.</p></article>
-      <article class="service"><div class="emoji">📱</div><h3>محتوى منصات التواصل</h3><p>مقاطع قصيرة مصممة لتناسب النشر على المنصات الرقمية وتشد الانتباه سريعًا.</p></article>
-      <article class="service"><div class="emoji">📝</div><h3>كتابة السيناريو</h3><p>صياغة الفكرة والمشاهد والحوار والتوجيهات البصرية قبل مرحلة الإنتاج.</p></article>
-    </div>
-  </div>
-</section>
+  <section id="services">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">خدماتنا</span>
+        <h2>نحوّل الفكرة إلى <span class="gold">تجربة بصرية</span></h2>
+        <p>
+          حلول إبداعية تساعد الأفراد والمشاريع والمعلمين على تقديم أفكارهم
+          بطريقة جذابة ومبتكرة.
+        </p>
+      </div>
 
-<section class="section dark" id="works">
-  <div class="wrap">
-    <div class="heading">
-      <span class="eyebrow">نماذج إبداعية</span>
-      <h2>أعمالنا</h2>
-      <p>أفكار متنوعة — ويمكن تخصيص كل فيديو حسب طلبك</p>
-    </div>
-    <div class="portfolio">
-      <article class="work"><div class="art"><span>حكاية من عُمان<br>بروح سينمائية</span></div><div class="work-info"><h3>مشاهد تاريخية وثقافية</h3><p>سرد بصري يبرز المكان والتفاصيل.</p></div></article>
-      <article class="work"><div class="art two"><span>التعلّم<br>بطريقة مختلفة</span></div><div class="work-info"><h3>درس تعليمي ممتع</h3><p>تبسيط المعلومة بمشاهد واضحة.</p></div></article>
-      <article class="work"><div class="art three"><span>علامتك التجارية<br>في مشهد مميز</span></div><div class="work-info"><h3>فيديو إعلاني</h3><p>فكرة إعلانية تُبنى حول منتجك وهويتك.</p></div></article>
-    </div>
-    <p class="note" style="text-align:center">هذه نماذج توضيحية لأنواع الخدمات، وليست روابط لفيديوهات منشورة.</p>
-  </div>
-</section>
+      <div class="services-grid">
+        <article class="card">
+          <div class="card-icon">🎓</div>
+          <h3>فيديوهات تعليمية</h3>
+          <p>
+            نحول الدروس والمفاهيم التعليمية إلى فيديوهات مبسطة وممتعة
+            تساعد على جذب انتباه الطلاب وتوضيح المعلومة.
+          </p>
+        </article>
 
-<section class="section" id="steps">
-  <div class="wrap">
-    <div class="heading">
-      <span class="eyebrow">ببساطة ووضوح</span>
-      <h2>كيف نعمل؟</h2>
-      <p>أربع خطوات من الفكرة إلى التسليم</p>
-    </div>
-    <div class="steps">
-      <div class="step"><div class="num">١</div><h3>تواصل معنا</h3><p>شاركنا فكرتك والهدف من الفيديو والجمهور المستهدف.</p></div>
-      <div class="step"><div class="num">٢</div><h3>نخطط للفكرة</h3><p>نحدد الأسلوب والمدة والتفاصيل المطلوبة قبل البدء.</p></div>
-      <div class="step"><div class="num">٣</div><h3>الإنتاج والمراجعة</h3><p>نعمل على الفيديو وننسق معك بشأن الملاحظات المتفق عليها.</p></div>
-      <div class="step"><div class="num">٤</div><h3>التسليم</h3><p>تستلم النسخة النهائية وفق المدة المتفق عليها.</p></div>
-    </div>
-  </div>
-</section>
+        <article class="card">
+          <div class="card-icon">✦</div>
+          <h3>إعلانات إبداعية</h3>
+          <p>
+            نصمم أفكارًا إعلانية مبتكرة للمقاهي والمتاجر والمشاريع،
+            بأسلوب بصري يبرز هوية النشاط ويجذب الجمهور.
+          </p>
+        </article>
 
-<section class="cta" id="idea">
-  <div class="wrap">
-    <div class="eyebrow">فكرتك قد تكون البداية</div>
-    <h2>شاركنا فكرتك</h2>
-    <p>لديك فكرة لفيديو تعليمي أو إعلاني أو قصصي؟ أخبرنا عنها.</p>
-    <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdZX5ZoxnRgSrzyASyKpkhamCFIpXMky04dV0Y9fVjTTmTPkA/viewform?usp=header" target="_blank" rel="noopener">ناقش فكرتك معنا ←</a>
-  </div>
-</section>
+        <article class="card">
+          <div class="card-icon">🎬</div>
+          <h3>قصص ومحتوى قصير</h3>
+          <p>
+            نحول الأفكار والقصص إلى مشاهد مرئية قصيرة مناسبة
+            لمنصات التواصل الاجتماعي.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-<section class="cta" id="contact">
-  <div class="wrap">
-    <div class="eyebrow">لديك فكرة؟ لنبدأ بها</div>
-    <h2>جاهز لتحويل فكرتك إلى فيديو مميز؟</h2>
-    <p>اضغط على الزر أدناه للتواصل معنا عبر واتساب.</p>
-    <a class="btn" href="https://wa.me/96800000000" target="_blank" rel="noopener">تواصل عبر واتساب ↗</a>
-    <p class="note">ملاحظة: رقم واتساب في الرابط تجريبي؛ استبدله برقمك قبل نشر الموقع.</p>
-  </div>
-</section>
+  <section class="works-section" id="works">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">معرض الأعمال</span>
+        <h2>أفكار تحولت إلى <span class="gold">مشاهد</span></h2>
+        <p>
+          تعرّف على نماذج من أعمالنا، وشاهد الفيديوهات عبر حسابنا على إنستغرام.
+        </p>
+      </div>
+
+      <div class="works-grid">
+
+        <article class="card work-card">
+          <a href="https://www.instagram.com/reel/DdLTJtzNKh2/"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="مشاهدة الفيديو الأول على إنستغرام">
+            <div class="work-visual">
+              <div class="play-icon">▶</div>
+              <span class="work-label">عمل إبداعي بالذكاء الاصطناعي</span>
+            </div>
+          </a>
+          <div class="work-info">
+            <h3>العمل الأول</h3>
+            <p>شاهد نموذجًا من أعمالنا المرئية.</p>
+            <a class="btn btn-outline"
+               href="https://www.instagram.com/reel/DdLTJtzNKh2/"
+               target="_blank" rel="noopener noreferrer">▶ شاهد العمل</a>
+          </div>
+        </article>
+
+        <article class="card work-card">
+          <a href="https://www.instagram.com/reel/DelGn4UIXuR/"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="مشاهدة الفيديو الثاني على إنستغرام">
+            <div class="work-visual">
+              <div class="play-icon">▶</div>
+              <span class="work-label">فكرة تتحول إلى فيديو</span>
+            </div>
+          </a>
+          <div class="work-info">
+            <h3>العمل الثاني</h3>
+            <p>اكتشف أسلوبنا في صناعة المحتوى.</p>
+            <a class="btn btn-outline"
+               href="https://www.instagram.com/reel/DelGn4UIXuR/"
+               target="_blank" rel="noopener noreferrer">▶ شاهد العمل</a>
+          </div>
+        </article>
+
+        <article class="card work-card">
+          <a href="https://www.instagram.com/reel/DdJd3-Vu6X_/"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="مشاهدة الفيديو الثالث على إنستغرام">
+            <div class="work-visual">
+              <div class="play-icon">▶</div>
+              <span class="work-label">الإبداع بأسلوب مختلف</span>
+            </div>
+          </a>
+          <div class="work-info">
+            <h3>العمل الثالث</h3>
+            <p>شاهد المزيد من أفكارنا الإبداعية.</p>
+            <a class="btn btn-outline"
+               href="https://www.instagram.com/reel/DdJd3-Vu6X_/"
+               target="_blank" rel="noopener noreferrer">▶ شاهد العمل</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="steps">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">آلية العمل</span>
+        <h2>من الفكرة إلى <span class="gold">الفيديو النهائي</span></h2>
+        <p>خطوات واضحة لتقديم عمل يناسب فكرتك واحتياجاتك.</p>
+      </div>
+
+      <div class="steps-grid">
+        <article class="card">
+          <div class="step-number">01</div>
+          <h3>أرسل فكرتك</h3>
+          <p>شاركنا فكرة الفيديو ونوعه والهدف الذي تريد تحقيقه.</p>
+        </article>
+
+        <article class="card">
+          <div class="step-number">02</div>
+          <h3>التفاصيل والتصور</h3>
+          <p>نناقش تفاصيل العمل والتصور المناسب والمدة والتكلفة المتوقعة.</p>
+        </article>
+
+        <article class="card">
+          <div class="step-number">03</div>
+          <h3>التنفيذ والتسليم</h3>
+          <p>بعد الاتفاق، نعمل على تنفيذ الفيديو وتسليمه وفق التفاصيل المتفق عليها.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="idea">
+    <div class="container">
+      <div class="idea-box">
+        <span class="eyebrow">لنبدأ الآن</span>
+        <h2>لديك فكرة؟ <span class="gold">دعنا نحولها إلى واقع</span></h2>
+        <p>
+          أخبرنا عن فكرتك ونوع الفيديو الذي تحتاج إليه.
+          أرسل التفاصيل عبر النموذج، وسنراجع طلبك ونتواصل معك لمناقشة الخطوات التالية.
+        </p>
+
+        <a class="btn btn-gold"
+           href="https://docs.google.com/forms/d/e/1FAIpQLSdZX5ZoxnRgSrzyASyKpkhamCFIpXMky04dV0Y9fVjTTmTPkA/viewform?usp=header"
+           target="_blank" rel="noopener noreferrer">
+          ✦ أرسل فكرتك عبر النموذج
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">تواصل معنا</span>
+        <h2>خطوتك الأولى تبدأ <span class="gold">برسالة</span></h2>
+        <p>اختر الطريقة المناسبة لك للتواصل بشأن مشروعك.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>تواصل عبر واتساب</h3>
+          <p>
+            لمناقشة فكرتك والاستفسار عن الخدمات والتكلفة والمدة المتوقعة للتنفيذ.
+          </p>
+          <a class="btn btn-gold"
+             href="https://wa.me/96871027997?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D8%B3%D8%B1%D8%A7%D8%AC%20%D8%A7%D9%84%D8%B9%D9%84%D9%85."
+             target="_blank" rel="noopener noreferrer">
+            <span>◉</span> ابدأ المحادثة
+          </a>
+        </div>
+
+        <div class="contact-card">
+          <h3>أرسل تفاصيل المشروع</h3>
+          <p>
+            املأ نموذج الطلب لتوضيح نوع الفيديو وفكرته والتفاصيل التي ترغب في مشاركتها.
+          </p>
+          <a class="btn btn-outline"
+             href="https://docs.google.com/forms/d/e/1FAIpQLSdZX5ZoxnRgSrzyASyKpkhamCFIpXMky04dV0Y9fVjTTmTPkA/viewform?usp=header"
+             target="_blank" rel="noopener noreferrer">
+            فتح نموذج الطلب
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
-<footer class="footer">
-  <div class="wrap">
-    <strong>سراج العلم</strong>
-    <p>نحوّل الأفكار إلى تجارب بصرية.</p>
-    <span>© <span id="year"></span> سراج العلم</span>
+<footer>
+  <div class="container">
+    <div class="footer-logo">سراج العلم</div>
+    <p>نحوّل أفكارك إلى محتوى بصري بإبداع الذكاء الاصطناعي.</p>
+    <p>© <span id="year">2026</span> سراج العلم — جميع الحقوق محفوظة.</p>
   </div>
 </footer>
 
+<a class="whatsapp-float"
+   href="https://wa.me/96871027997"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="تواصل معنا عبر واتساب"
+   title="تواصل عبر واتساب">◉</a>
+
 <script>
-document.getElementById('year').textContent = new Date().getFullYear();
+  document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+
 </body>
 </html>
